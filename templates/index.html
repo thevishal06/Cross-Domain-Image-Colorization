@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cross-Domain Image Colorization</title>
+    <style>
+        body {
+            background-color: #f0f8ff;  /* Light blue background color */
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;  /* Darker text color for headers */
+        }
+        form {
+            margin: 20px 0;
+        }
+        select, input[type="submit"] {
+            padding: 10px;
+            margin: 5px;
+        }
+        img {
+            margin-top: 20px;
+            border: 2px solid #ccc;  /* Light border for images */
+        }
+    </style>
+</head>
+<body>
+    <h1>Cross-Domain Image Colorization</h1>
+    <form action="/upload" method="post" enctype="multipart/form-data">
+        <input type="file" name="file" accept="image/*" required>
+        <select name="color_choice">
+            <option value="red">Red</option>
+            <option value="green">Green</option>
+            <option value="blue">Blue</option>
+        </select>
+        <input type="submit" value="Upload Image">
+    </form>
+    {% if filename %}
+        <h2>Colorized Image:</h2>
+        <img src="{{ url_for('static', filename='colorized_image.png') }}" alt="Colorized Image">
+    {% endif %}
+</body>
+</html>
+
