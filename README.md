@@ -1,0 +1,1 @@
+Cross-Domain Image Colorization: A model for colorizing images from various domains, such as sketches and infrared images, with domain-specific algorithms. The GUI allows domain selection and colorization preview.
